@@ -25,8 +25,8 @@ const Welcome = () => (
                 <SpiderWelcome />
             </div>
             <div className="main__content">
-                <h1>
-                    Welcome to <strong>API Platform</strong>!
+                <h1>asdas
+                    Welcomeasdasd to <strong>API Platform</strong>!
                 </h1>
                 <div className="main__before-starting">
                     <p>

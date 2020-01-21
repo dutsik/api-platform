@@ -17,12 +17,34 @@ import * as serviceWorker from './serviceWorker';
 // Import your reducers and routes here
 import Welcome from './Welcome';
 
+
+// import reducers
+import greeting from './reducers/greeting/';
+// import reducers
+import book from './reducers/book/';
+// import reducers
+import review from './reducers/review/';
+
+
+//import routes
+import greetingRoutes from './routes/greeting';
+//import routes
+import bookRoutes from './routes/book';
+//import routes
+import reviewRoutes from './routes/review';
+
+
+
+
 const history = createBrowserHistory();
 const store = createStore(
   combineReducers({
     router: connectRouter(history),
     form,
     /* Add your reducers here */
+    greeting,
+    book,
+    review,
   }),
   applyMiddleware(routerMiddleware(history), thunk)
 );
@@ -33,6 +55,9 @@ ReactDOM.render(
       <Switch>
         <Route path="/" component={Welcome} strict={true} exact={true}/>
         {/* Add your routes here */}
+        { reviewRoutes }
+        { bookRoutes }
+        { greetingRoutes }
         <Route render={() => <h1>Not Found</h1>} />
       </Switch>
     </ConnectedRouter>
